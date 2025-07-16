@@ -1,13 +1,16 @@
 {
   "name": "backend-domination",
   "version": "1.0.0",
-  "main": "script1.js",
+  "main": "script2.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node FileSystem/script1.js"
+    "start": "npx nodemon Routing/script1.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
 }
