@@ -2,11 +2,7 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res)=> {
-    res.send("Home")
-})
-
-app.post("./data/:number", (req, res) => {
-    res.send("nice name btw");
+    res.send("Hii hellow")
 })
 
 app.listen(3000);
