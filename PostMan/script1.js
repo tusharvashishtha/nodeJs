@@ -17,29 +17,23 @@
 
 
 
-const express = require('express');
-const app = express();
-const port = 3000;
 
-app.use(express.json());
+    // ******** MIDDLEWARE FUNCTION **********
 
+    const express = require('express');
+    const app = express();
 
-const userRoutes = require('./routes/userRoutes');
+    app.use(function(req, res, next){
+        console.log("hii");
+        next();
+    })
 
+    app.get("/", function(req, res){
+        res.send("nice name");
+    })
 
-app.use('/api/users', userRoutes);
+    app.get("/about", function(req, res){
+        res.send("About ,me")
+    })
 
-
-app.get('/', (req, res) => {
-  res.send('Welcome to the Express App!');
-});
-
-
-app.use((req, res) => {
-  res.status(404).json({ error: 'Route not found' });
-});
-
-
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
-});
+    app.listen(3000);

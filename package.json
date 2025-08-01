@@ -4,14 +4,15 @@
   "main": "script2.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx nodemon PostMan/script1.js"
+    "start": "npx nodemon ExpressSession/ExpressSession.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "express-session": "^1.18.2"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
