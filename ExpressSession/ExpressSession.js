@@ -1,27 +1,25 @@
 const express = require('express');
-const session = require('express-session');
-
 const app = express();
+const expressSession = require('express-session');
 
-// Setup session middleware
-app.use(session({
-  secret: 'mysecretkey',        
-  resave: false,                 
-  saveUninitialized: true        
-}));
+app.use(expressSession({
+  secret: "Hello",
+  resave: false,
+  saveUninitialized: false
+}))
 
-// Route to count visits
-app.get('/', (req, res) => {
-  if (req.session.views) {
-    req.session.views++;
-    res.send(`<h1>You have visited this page ${req.session.views} times</h1>`);
-  } else {
-    req.session.views = 1;
-    res.send('<h1>Welcome! This is your first visit.</h1>');
-  }
-});
 
-// Start the server
-app.listen(3000, () => {
-  console.log('Server is running at http://localhost:3000');
-});
+app.get("/create", function(req, res, next){
+  req.session.polo = true
+  res.send('Done')
+})
+
+app.get('/checks', function(req, res){
+  console.log(req.session.polo)
+})
+
+app.get('/', function(req, res){
+  res.send("Hii there!");
+})
+
+app.listen(3000);
