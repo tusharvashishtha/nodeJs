@@ -1,25 +1,18 @@
 const express = require('express');
 const app = express();
-const expressSession = require('express-session');
 
-app.use(expressSession({
-  secret: "Hello",
-  resave: false,
-  saveUninitialized: false
-}))
+// Home route
+app.get('/', (req, res) => {
+  res.send('Hello, Express!');
+});
 
+// About route
+app.get('/about', (req, res) => {
+  res.send('This is the About Page');
+});
 
-app.get("/create", function(req, res, next){
-  req.session.polo = true
-  res.send('Done')
-})
-
-app.get('/checks', function(req, res){
-  console.log(req.session.polo)
-})
-
-app.get('/', function(req, res){
-  res.send("Hii there!");
-})
-
-app.listen(3000);
+// Start the server
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});
