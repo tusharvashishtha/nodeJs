@@ -4,7 +4,7 @@
   "main": "script2.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx nodemon ExpressSession/ExpressSession.js"
+    "start": "node Modules/index.js"
   },
   "keywords": [],
   "author": "",
