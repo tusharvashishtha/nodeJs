@@ -1,8 +1,11 @@
-let add = require('./add')
+// let add = require('./add')
 
 
-console.log(add.add(10,5));
-console.log(add.subtract(10,5));
+// console.log(add.add(10,5));
+// console.log(add.subtract(10,5));
+
+console.log(__dirname);
+console.log(__filename);
 
 
 
