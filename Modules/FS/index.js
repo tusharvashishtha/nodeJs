@@ -1,0 +1,28 @@
+const fs = require('fs');
+fs.readFile('Modules/FS/file1.txt', 'utf-8', (err, data)=> {
+    if(err){
+        console.log(err.message)
+        return;
+    }
+    console.log(data);
+    if(data){
+        fs.readFile('Modules/FS/file2.txt', 'utf-8', (err,data)=> {
+            if(err){
+                console.log(err.message)
+                return;
+            }
+            console.log(data)
+            if(data){
+                fs.readFile('Modules/FS/file3.txt', 'utf8', (err, data)=> {
+                    if(err){
+                        console.log(err.message)
+                        return;
+                    }
+                    else{
+                        console.log(data)
+                    }
+                })
+            }
+        })
+    }
+})
