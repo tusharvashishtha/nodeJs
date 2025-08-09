@@ -28,11 +28,19 @@
 // })
 
 
-const fsPromise = require('fs').promises;
+// const fsPromise = require('fs').promises;
 
-const readFile = async () => {
-    const data = await fsPromise.readFile('Modules/FS/file1.txt', 'utf-8');
-    console.log(data)
-}
+// const readFile = async () => {
+//     const data = await fsPromise.readFile('Modules/FS/file1.txt', 'utf-8');
+//     console.log(data)
+// }
 
-readFile()
+// readFile()
+
+
+
+// printing path of any file
+
+const path = require('path');
+const Filepath = path.join(__dirname, 'Modules', 'index.js');
+console.log(Filepath)
