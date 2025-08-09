@@ -41,6 +41,10 @@
 
 // printing path of any file
 
+// const path = require('path');
+// const Filepath = path.join(__dirname, 'Modules', 'index.js');
+// console.log(Filepath)
+
 const path = require('path');
-const Filepath = path.join(__dirname, 'Modules', 'index.js');
-console.log(Filepath)
+const filePath = path.join(__dirname, '..', 'FS')
+console.log(filePath)
